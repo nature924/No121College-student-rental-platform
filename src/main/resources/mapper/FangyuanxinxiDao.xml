@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.FangyuanxinxiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.FangyuanxinxiEntity" id="fangyuanxinxiMap">
+        <result property="fangyuanbianhao" column="fangyuanbianhao"/>
+        <result property="fangyuanmingcheng" column="fangyuanmingcheng"/>
+        <result property="huxing" column="huxing"/>
+        <result property="pingfangshu" column="pingfangshu"/>
+        <result property="weizhi" column="weizhi"/>
+        <result property="jianjie" column="jianjie"/>
+        <result property="xiangguantupian" column="xiangguantupian"/>
+        <result property="chuzuleixing" column="chuzuleixing"/>
+        <result property="zujin" column="zujin"/>
+        <result property="zhuangxiuqingkuang" column="zhuangxiuqingkuang"/>
+        <result property="qitaxinxi" column="qitaxinxi"/>
+        <result property="fangdongzhanghao" column="fangdongzhanghao"/>
+        <result property="fangdongxingming" column="fangdongxingming"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="faburiqi" column="faburiqi"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.FangyuanxinxiVO" >
+		SELECT * FROM fangyuanxinxi  fangyuanxinxi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.FangyuanxinxiVO" >
+		SELECT  fangyuanxinxi.* FROM fangyuanxinxi  fangyuanxinxi 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.FangyuanxinxiView" >
+
+		SELECT  fangyuanxinxi.* FROM fangyuanxinxi  fangyuanxinxi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.FangyuanxinxiView" >
+		SELECT * FROM fangyuanxinxi  fangyuanxinxi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
